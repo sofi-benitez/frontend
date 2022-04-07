@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="mycolor">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Horario de buses</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Origen</ion-label>
+          <ion-select value="notifications" interface="action-sheet"[compareWith]="compareWith">
+            <ion-select-option *ngFor="let terminal of terminales" [value]="terminal">{{terminal.first}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Destino</ion-label>
+          <ion-select value="notifications" interface="action-sheet"[compareWith]="compareWith">
+            <ion-select-option *ngFor="let terminal of terminales" [value]="terminal">{{terminal.first}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-item href="#" class="ion-activated">
+      <ion-label>NSA</ion-label>
+      <ion-label>Asun - CDE</ion-label>
+      <ion-label>15:00</ion-label>
+      <ion-button fill="outline" slot="end" color="danger">NO</ion-button>
+    </ion-item>
+
+    <ion-item href="#" class="ion-activated">
+      <ion-label>Guarani</ion-label>
+      <ion-label>Asun - CDE</ion-label>
+      <ion-label>15:00</ion-label>
+      <ion-button fill="outline" slot="end" color="success">VER</ion-button>
+    </ion-item>
+
+    <ion-item href="#" class="ion-activated">
+      <ion-label>San Luis</ion-label>
+      <ion-label>Asun - CDE</ion-label>
+      <ion-label>15:00</ion-label>
+      <ion-button fill="outline" slot="end" color="success">VER</ion-button>
+    </ion-item>
+  </ion-card>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img src="./assets/mapa.png"></ion-img>
+      </ion-thumbnail>
+    </ion-item>
+  </ion-list>
+</ion-content>
